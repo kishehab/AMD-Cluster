@@ -1,11 +1,16 @@
 define(['dojo/_base/declare'], function(declare) {
-    // setup global variables
-    var svgNS = document.createElementNS("http://www.w3.org/2000/svg", "svg").namespaceURI;
-    this.g = document.createElementNS(svgNS, "g");
-    this.circle = document.createElementNS(svgNS, 'circle');
-    this.label = document.createElementNS(svgNS, 'text');
+   
     return declare(null, {
+         // setup global variables
+        svgNS: null,
+        g: null,
+        circle: null,
+        label: null,
         constructor: function(cx, cy, cr, color, labelText) {
+            this.svgNS = document.createElementNS("http://www.w3.org/2000/svg", "svg").namespaceURI;
+            this.g = document.createElementNS(svgNS, "g");
+            this.circle = document.createElementNS(svgNS, 'circle');
+            this.label = document.createElementNS(svgNS, 'text');
             this.cx = cx;
             this.cy = cy;
             this.cr = cr;
